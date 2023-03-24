@@ -10,7 +10,6 @@ const { curTaskTitle, getCurrentTask, currentTask } =
 const curEvent = Object.keys(currentTask.value).find(
   (event) => event === props.cardTitle,
 );
-const eventItem = currentTask.value[curEvent];
 
 const handleAddEvent = () => {
   const title = prompt('输入标题');
@@ -34,20 +33,16 @@ const handleAddEvent = () => {
         <label class="btn btn-outline" @click="handleAddEvent()">+</label>
       </div>
 
-      <div v-for="cardEvent in eventItem" :key="cardEvent">
-        {{ cardEvent }}
-      </div>
-
-      <div>
-        {{ getCurrentTask(curTaskTitle) }}
-      </div>
-
-      <div class="card w-60 bg-base-200 shadow-xl">
+      <div
+        class="card w-60 bg-base-200 shadow-xl"
+        v-for="event in getCurrentTask(curTaskTitle)[curEvent]"
+      >
         <div class="card-body">
-          <h2 class="card-title">Card title!</h2>
-          <p class="">content</p>
+          <h2 class="card-title">{{ event.title }}</h2>
+          <p>{{ event.content }}</p>
         </div>
       </div>
+
     </div>
   </div>
 </template>

@@ -7,19 +7,19 @@ export const useEventBoxStore = defineStore(
             tasks: [
                 {
                     title: 'First',
-                    ['Pre']: ['one'],
-                    ['Ing']: ['two'],
-                    ['Fin']: ['three'],
+                    ['Pre']: [],
+                    ['Ing']: [],
+                    ['Fin']: [],
                 },
             ],
             taskNum: 0,
-            curTaskTitle:'',
+            curTaskTitle:'First',
             event: 'Pre',
         }),
         getters: {
             currentTask: (state) => state.tasks[state.taskNum],
             getCurrentTask: (state) => {
-                return (taskItemTitle) => state.tasks.find(task => task.title === taskItemTitle)
+                return (taskTitle) => state.tasks.find(task => task.title === taskTitle)
             }
         }
     }
