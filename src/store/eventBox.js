@@ -13,10 +13,14 @@ export const useEventBoxStore = defineStore(
                 },
             ],
             taskNum: 0,
+            curTaskTitle:'',
             event: 'Pre',
         }),
         getters: {
             currentTask: (state) => state.tasks[state.taskNum],
+            getCurrentTask: (state) => {
+                return (taskItemTitle) => state.tasks.find(task => task.title === taskItemTitle)
+            }
         }
     }
 )

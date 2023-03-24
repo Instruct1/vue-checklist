@@ -4,13 +4,13 @@ import { useEventBoxStore } from '../store/eventBox';
 
 const props = defineProps(['cardTitle']);
 const eventBoxStore = useEventBoxStore();
-const { tasks, taskNum, currentTask } = storeToRefs(eventBoxStore);
+const { curTaskTitle, getCurrentTask, currentTask } =
+  storeToRefs(eventBoxStore);
 
 const curEvent = Object.keys(currentTask.value).find(
   (event) => event === props.cardTitle,
 );
 const eventItem = currentTask.value[curEvent];
-console.log(eventItem);
 
 const handleAddEvent = () => {
   const title = prompt('输入标题');
@@ -36,6 +36,10 @@ const handleAddEvent = () => {
 
       <div v-for="cardEvent in eventItem" :key="cardEvent">
         {{ cardEvent }}
+      </div>
+
+      <div>
+        {{ getCurrentTask(curTaskTitle) }}
       </div>
 
       <div class="card w-60 bg-base-200 shadow-xl">

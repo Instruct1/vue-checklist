@@ -5,10 +5,13 @@ import { useEventBoxStore } from '../store/eventBox';
 import Target from './Target.vue';
 
 const eventBoxStore = useEventBoxStore();
-const { tasks, currentTask } = storeToRefs(eventBoxStore);
+const { tasks, currentTask, curTaskTitle } = storeToRefs(eventBoxStore);
 
-const handleCurTask = (index) => {
-  eventBoxStore.$state.taskNum = index;
+const handleCurTask = (task, index) => {
+  eventBoxStore.$patch((state) => {
+    state.taskNum = index;
+    state.curTaskTitle = task.title;
+  });
 };
 
 const handleAddTask = () => {
@@ -41,7 +44,7 @@ const handleAddTask = () => {
           ? 'grid h-20 card rounded-box place-items-center mb-3 cursor-pointer bg-orange-300'
           : 'grid h-20 card rounded-box place-items-center mb-3 cursor-pointer bg-base-300'
       "
-      @click="handleCurTask(index)"
+      @click="handleCurTask(task, index)"
       :key="task.title"
     >
       {{ task.title }}
