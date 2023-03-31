@@ -185,9 +185,9 @@
     "@vue/compiler-dom" "3.2.47"
     "@vue/shared" "3.2.47"
 
-"@vue/devtools-api@^6.4.5":
+"@vue/devtools-api@^6.5.0":
   version "6.5.0"
-  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz"
   integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
 
 "@vue/reactivity-transform@3.2.47":
@@ -589,6 +589,11 @@ nanoid@^3.3.4:
   resolved "https://registry.npmmirror.com/nanoid/-/nanoid-3.3.4.tgz"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
+nanoid@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmmirror.com/nanoid/-/nanoid-4.0.2.tgz#140b3c5003959adbebf521c170f282c5e7f9fb9e"
+  integrity sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==
+
 node-releases@^2.0.8:
   version "2.0.10"
   resolved "https://registry.npmmirror.com/node-releases/-/node-releases-2.0.10.tgz"
@@ -630,11 +635,11 @@ pify@^2.3.0:
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
 
 pinia@^2.0.30:
-  version "2.0.30"
-  resolved "https://registry.npmmirror.com/pinia/-/pinia-2.0.30.tgz#b18a581dad6821ed5fbebfaf631229480ea9d2d9"
-  integrity sha512-q6DUmxWwe/mQgg+55QQjykpKC+aGeGdaJV3niminl19V08dE+LRTvSEuqi6/NLSGCKHI49KGL6tMNEOssFiMyA==
+  version "2.0.33"
+  resolved "https://registry.npmmirror.com/pinia/-/pinia-2.0.33.tgz"
+  integrity sha512-HOj1yVV2itw6rNIrR2f7+MirGNxhORjrULL8GWgRwXsGSvEqIQ+SE0MYt6cwtpegzCda3i+rVTZM+AM7CG+kRg==
   dependencies:
-    "@vue/devtools-api" "^6.4.5"
+    "@vue/devtools-api" "^6.5.0"
     vue-demi "*"
 
 postcss-import@^14.1.0:
@@ -749,6 +754,11 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+sortablejs@1.14.0:
+  version "1.14.0"
+  resolved "https://registry.npmmirror.com/sortablejs/-/sortablejs-1.14.0.tgz#6d2e17ccbdb25f464734df621d4f35d4ab35b3d8"
+  integrity sha512-pBXvQCs5/33fdN1/39pPL0NZF20LeRbLQ5jtnheIPN9JQAaufGjKdWduZn4U7wCtVuzKhmRkI0DFYHYRbB2H1w==
+
 source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/source-map-js/-/source-map-js-1.0.2.tgz"
@@ -832,7 +842,7 @@ vite@^4.1.0:
 
 vue-demi@*:
   version "0.13.11"
-  resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.11.tgz#7d90369bdae8974d87b1973564ad390182410d99"
+  resolved "https://registry.npmmirror.com/vue-demi/-/vue-demi-0.13.11.tgz"
   integrity sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==
 
 vue@^3.2.45:
@@ -845,6 +855,13 @@ vue@^3.2.45:
     "@vue/runtime-dom" "3.2.47"
     "@vue/server-renderer" "3.2.47"
     "@vue/shared" "3.2.47"
+
+vuedraggable@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npmmirror.com/vuedraggable/-/vuedraggable-4.1.0.tgz#edece68adb8a4d9e06accff9dfc9040e66852270"
+  integrity sha512-FU5HCWBmsf20GpP3eudURW3WdWTKIbEIQxh9/8GE806hydR9qZqRRxRE3RjqX7PkuLuMQG/A7n3cfj9rCEchww==
+  dependencies:
+    sortablejs "1.14.0"
 
 xtend@^4.0.2:
   version "4.0.2"

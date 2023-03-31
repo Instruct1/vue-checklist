@@ -2,9 +2,12 @@
 import { storeToRefs } from 'pinia';
 import { useEventBoxStore } from '../store/eventBox';
 
+import draggable from 'vuedraggable';
+import { nanoid } from 'nanoid';
+
 const props = defineProps(['cardTitle']);
 const eventBoxStore = useEventBoxStore();
-const { curTaskTitle, getCurrentTask, currentTask } =
+const { tasks, taskNum, curTaskTitle, getCurrentTask, currentTask } =
   storeToRefs(eventBoxStore);
 
 const curEvent = Object.keys(currentTask.value).find(
@@ -33,15 +36,19 @@ const handleAddEvent = () => {
         <label class="btn btn-outline" @click="handleAddEvent()">+</label>
       </div>
 
-      <div
-        class="card w-60 bg-base-200 shadow-xl"
-        v-for="event in getCurrentTask(curTaskTitle)[curEvent]"
+      <draggable
+        :list="eventBoxStore.getCurrentTask(curTaskTitle)[curEvent]"
+        item-key="title"
       >
-        <div class="card-body">
-          <h2 class="card-title">{{ event.title }}</h2>
-          <p>{{ event.content }}</p>
-        </div>
-      </div>
+        <template #item="{ element }">
+          <div class="card w-60 bg-base-200 shadow-xl cursor-pointer mt-3" :key="nanoid()">
+            <div class="card-body">
+              <h2 class="card-title">{{ element.title }}</h2>
+              <p>{{ element.content }}</p>
+            </div>
+          </div>
+        </template>
+      </draggable>
 
     </div>
   </div>
