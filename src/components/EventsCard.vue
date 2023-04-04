@@ -39,6 +39,7 @@ const handleAddEvent = () => {
       <draggable
         :list="eventBoxStore.getCurrentTask(curTaskTitle)[curEvent]"
         item-key="title"
+        animation="300"
       >
         <template #item="{ element }">
           <div class="card w-60 bg-base-200 shadow-xl cursor-pointer mt-3" :key="nanoid()">
