@@ -25,6 +25,11 @@ const handleAddEvent = () => {
     state.tasks[state.taskNum][state.event].push({ title, content });
   });
 };
+const handleDrag = (e)=>{
+  console.log(e);
+  console.log(e.newIndex);
+  console.log(e.item.__draggable_context.element);
+}
 </script>
 
 <template>
@@ -37,9 +42,10 @@ const handleAddEvent = () => {
       </div>
 
       <draggable
-        :list="eventBoxStore.getCurrentTask(curTaskTitle)[curEvent]"
+        :list="getCurrentTask(curTaskTitle)[curEvent]"
         item-key="title"
         animation="300"
+        @end="handleDrag"
       >
         <template #item="{ element }">
           <div class="card w-60 bg-base-200 shadow-xl cursor-pointer mt-3" :key="nanoid()">
